@@ -1,8 +1,6 @@
 # 🚀 Finance Dashboard Backend
 
-<p align="center">
-  
-</p>
+
 
 A production-ready backend system for managing financial transactions, user roles, and analytics dashboards with secure role-based access control.
 
@@ -18,10 +16,9 @@ A production-ready backend system for managing financial transactions, user role
   * Total Income
   * Total Expenses
   * Net Balance
-  * Category Breakdown
 * 🛡️ Role-Based Access Control
 * 📄 Pagination & Filtering
-* ✅ Input Validation using Zod
+* ✅ Input Validation
 * 🧱 Clean Architecture (Controller → Service → DB)
 
 ---
@@ -31,10 +28,9 @@ A production-ready backend system for managing financial transactions, user role
 * Node.js
 * Express.js
 * Prisma ORM
-* SQLite (can be switched to PostgreSQL)
-* Zod (Validation)
-* JWT (Authentication)
-* bcrypt (Password Hashing)
+* SQLite
+* JWT
+* bcrypt
 
 ---
 
@@ -46,8 +42,6 @@ src/
 ├── services/
 ├── routes/
 ├── middleware/
-├── utils/
-├── config/
 └── app.js
 ```
 
@@ -58,7 +52,7 @@ src/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone git@github.com:kunwarab/finance-dashboard-backend.git
+git clone https://github.com/kunwarab/finance-dashboard-backend.git
 cd finance-dashboard-backend
 ```
 
@@ -99,7 +93,7 @@ npx prisma generate
 npm run dev
 ```
 
-Server will run at:
+Server runs at:
 
 ```
 http://localhost:5000
@@ -109,43 +103,20 @@ http://localhost:5000
 
 ## 🌐 Live API
 
-```
-https://finance-dashboard-backend-toa8.onrender.com
-```
+👉 https://finance-dashboard-backend-toa8.onrender.com
 
 ---
 
-## 📘 API Documentation (Swagger)
+## 📘 API Documentation
 
-```
-https://finance-dashboard-backend-toa8.onrender.com/api-docs/
-```
-
----
-
-## 🔑 Demo Credentials
-
-```
-Email: admin@test.com
-Password: 123456
-Role: ADMIN
-```
-
+👉 https://finance-dashboard-backend-toa8.onrender.com/api-docs/
 ---
 
 ## 📡 API Endpoints
 
-### 🔐 Authentication
+### 🔐 Auth
 
 * POST `/api/auth/login`
-
----
-
-### 👤 Users (Admin Only)
-
-* POST `/api/users`
-
----
 
 ### 💰 Transactions
 
@@ -154,38 +125,17 @@ Role: ADMIN
 * PUT `/api/transactions/:id`
 * DELETE `/api/transactions/:id`
 
----
-
 ### 📊 Dashboard
 
 * GET `/api/dashboard/summary`
 
 ---
 
-## 🔒 Roles & Permissions
+## 🔒 Roles
 
-| Role    | Access Level                  |
-| ------- | ----------------------------- |
-| Viewer  | View dashboard                |
-| Analyst | View transactions + analytics |
-| Admin   | Full access                   |
-
----
-
-## 📌 Important Notes
-
-* All data is user-specific and secured
-* Role-based middleware restricts unauthorized access
-* Validation ensures safe API usage
-
----
-
-## 🚀 Future Improvements
-
-* 🌐 Deployment enhancements
-* 📘 Advanced API documentation
-* 🧪 Unit & Integration Testing
-* 🚦 Rate Limiting & Security
+* Viewer → Dashboard only
+* Analyst → Transactions + analytics
+* Admin → Full access
 
 ---
 
@@ -197,4 +147,6 @@ Role: ADMIN
 
 ## ⭐ Support
 
-If you found this project helpful, give it a ⭐ on GitHub!
+Give a ⭐ if you like this project!
+
+
