@@ -118,7 +118,7 @@ https://finance-dashboard-backend-toa8.onrender.com
 ## 📘 API Documentation (Swagger)
 
 ```
-
+https://finance-dashboard-backend-toa8.onrender.com/api-docs/
 ```
 
 ---
