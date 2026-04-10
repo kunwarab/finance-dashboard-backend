@@ -7,10 +7,15 @@ const options = {
       title: "Finance Dashboard API",
       version: "1.0.0",
     },
+    servers: [
+      {
+        url: "http://localhost:5000",
+      },
+    ],
   },
-  apis: ["./src/routes/*.js"],
+  apis: ["./src/routes/*.js"], 
 };
 
-const specs = swaggerJsdoc(options);
+const swaggerSpec = swaggerJsdoc(options);
 
-module.exports = specs;
+module.exports = swaggerSpec;
