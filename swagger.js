@@ -2,26 +2,29 @@ const swaggerJsdoc = require("swagger-jsdoc");
 
 const options = {
   definition: {
-  openapi: "3.0.0",
-  info: {
-    title: "Finance Dashboard API",
-    version: "1.0.0",
-  },
-  servers: [
-    {
-      url: "https://finance-dashboard-backend-toa8.onrender.com",
+    openapi: "3.0.0",
+    info: {
+      title: "Finance Dashboard API",
+      version: "1.0.0",
     },
-  ],
-  components: {
-    securitySchemes: {
-      bearerAuth: {
-        type: "http",
-        scheme: "bearer",
-        bearerFormat: "JWT",
+    servers: [
+      {
+        url: "https://finance-dashboard-backend-toa8.onrender.com",
+      },
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
       },
     },
   },
-},
+
+  // 🔥 THIS LINE FIXES YOUR ERROR
+  apis: ["./src/routes/**/*.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
