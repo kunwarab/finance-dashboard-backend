@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const swaggerUi = require("swagger-ui-express");
-const specs = require("./swagger");
+const specs = require("../swagger");
 
 
 const app = express();

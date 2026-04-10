@@ -1,89 +1,200 @@
-📌 Finance Dashboard Backend
+# 🚀 Finance Dashboard Backend
 
-A backend system for managing financial transactions, user roles, and analytics dashboards with role-based access control.
+<p align="center">
+  
+</p>
 
-🚀 Features
-User & Role Management (Admin, Analyst, Viewer)
-Secure Authentication (JWT)
-Transaction Management (CRUD + Filters)
-Dashboard APIs (Summary, Trends, Category Breakdown)
-Role-Based Access Control
-Pagination & Validation
-Clean Architecture (Controller → Service → DB)
-🛠️ Tech Stack
-Node.js
-Express.js
-Prisma ORM
-PostgreSQL (or SQLite)
-Zod (Validation)
-JWT (Authentication)
-📂 Project Structure
+A production-ready backend system for managing financial transactions, user roles, and analytics dashboards with secure role-based access control.
+
+---
+
+## ✨ Features
+
+* 👥 User & Role Management (Admin, Analyst, Viewer)
+* 🔐 Secure Authentication using JWT
+* 💰 Transaction Management (CRUD + Filters)
+* 📊 Dashboard APIs:
+
+  * Total Income
+  * Total Expenses
+  * Net Balance
+  * Category Breakdown
+* 🛡️ Role-Based Access Control
+* 📄 Pagination & Filtering
+* ✅ Input Validation using Zod
+* 🧱 Clean Architecture (Controller → Service → DB)
+
+---
+
+## 🛠️ Tech Stack
+
+* Node.js
+* Express.js
+* Prisma ORM
+* SQLite (can be switched to PostgreSQL)
+* Zod (Validation)
+* JWT (Authentication)
+* bcrypt (Password Hashing)
+
+---
+
+## 📂 Project Structure
+
+```
 src/
- ├── controllers/
- ├── services/
- ├── routes/
- ├── middleware/
- ├── utils/
- ├── config/
- └── app.js
-⚙️ Setup Instructions
-1. Clone Repo
-git clone <your-repo-link>
+├── controllers/
+├── services/
+├── routes/
+├── middleware/
+├── utils/
+├── config/
+└── app.js
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone git@github.com:kunwarab/finance-dashboard-backend.git
 cd finance-dashboard-backend
-2. Install Dependencies
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
-3. Setup Environment
+```
 
-Create .env:
+---
 
-DATABASE_URL=your_db_url
-JWT_SECRET=your_secret
+### 3️⃣ Setup Environment Variables
+
+Create a `.env` file:
+
+```env
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="your_secret_key"
 PORT=5000
-4. Run Prisma
+```
+
+---
+
+### 4️⃣ Setup Database
+
+```bash
 npx prisma migrate dev
 npx prisma generate
-5. Start Server
+```
+
+---
+
+### 5️⃣ Start Server
+
+```bash
 npm run dev
-🔐 Roles & Permissions
-Action	Viewer	Analyst	Admin
-View Transactions	✅	✅	✅
-Create Transaction	❌	❌	✅
-Update/Delete	❌	❌	✅
-View Dashboard	✅	✅	✅
-Manage Users	❌	❌	✅
-📊 API Endpoints
-👤 Users
-POST /api/users
-GET /api/users
-💰 Transactions
-POST /api/transactions
-GET /api/transactions?page=1&limit=10
-PATCH /api/transactions/:id
-DELETE /api/transactions/:id
-📊 Dashboard
-GET /api/dashboard/summary
-GET /api/dashboard/category
-GET /api/dashboard/trends
-📈 Sample Response
-Summary
-{
-  "income": 5000,
-  "expense": 2000,
-  "balance": 3000
-}
-🧠 Design Decisions
-Used service layer for business logic separation
-Implemented RBAC (Role-Based Access Control) using middleware
-Used Prisma ORM for clean database queries
-Applied Zod validation for input safety
-Ensured user-level data isolation
-⚠️ Assumptions
-Authentication is simplified using JWT
-Single currency system
-No external payment integration
-🚀 Future Improvements
-Add refresh tokens
-Add unit tests
-Add Swagger API docs
-Add caching (Redis)
-Deploy on cloud (Render / AWS)
+```
+
+Server will run at:
+
+```
+http://localhost:5000
+```
+
+---
+
+## 🌐 Live API
+
+```
+https://finance-dashboard-backend-toa8.onrender.com
+```
+
+---
+
+## 📘 API Documentation (Swagger)
+
+```
+
+```
+
+---
+
+## 🔑 Demo Credentials
+
+```
+Email: admin@test.com
+Password: 123456
+Role: ADMIN
+```
+
+---
+
+## 📡 API Endpoints
+
+### 🔐 Authentication
+
+* POST `/api/auth/login`
+
+---
+
+### 👤 Users (Admin Only)
+
+* POST `/api/users`
+
+---
+
+### 💰 Transactions
+
+* POST `/api/transactions`
+* GET `/api/transactions`
+* PUT `/api/transactions/:id`
+* DELETE `/api/transactions/:id`
+
+---
+
+### 📊 Dashboard
+
+* GET `/api/dashboard/summary`
+
+---
+
+## 🔒 Roles & Permissions
+
+| Role    | Access Level                  |
+| ------- | ----------------------------- |
+| Viewer  | View dashboard                |
+| Analyst | View transactions + analytics |
+| Admin   | Full access                   |
+
+---
+
+## 📌 Important Notes
+
+* All data is user-specific and secured
+* Role-based middleware restricts unauthorized access
+* Validation ensures safe API usage
+
+---
+
+## 🚀 Future Improvements
+
+* 🌐 Deployment enhancements
+* 📘 Advanced API documentation
+* 🧪 Unit & Integration Testing
+* 🚦 Rate Limiting & Security
+
+---
+
+## 👨‍💻 Author
+
+**Abhishek Singh**
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, give it a ⭐ on GitHub!
